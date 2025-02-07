@@ -16,6 +16,7 @@
             align-items: center;
             padding: 15px 30px;
             background-color: #222;
+            position: relative;
         }
         .logo {
             font-size: 24px;
@@ -24,7 +25,6 @@
         .eclipse {
             color: #AD77D7;
         }
-
         .enterprises {
             color: #FDF7AD;
         }
@@ -46,6 +46,39 @@
         nav ul li a:hover {
             color: #AD77D7;
         }
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            color: white;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        @media (max-width: 1800px) {
+            header {
+                padding: 15px;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                background-color: #222;
+                width: 100%;
+                text-align: center;
+                padding: 10px 0;
+            }
+            nav ul.active {
+                display: flex;
+            }
+            nav ul li {
+                margin: 10px 0;
+            }
+        }
     </style>
 </head>
 <body>
@@ -54,6 +87,7 @@
             <span class="eclipse">Eclipse</span>
             <span class="enterprises">Enterprises</span>
         </div>
+        <button class="menu-toggle">&#9776;</button>
         <nav>
             <ul>
                 <li><a href="#">Home</a></li>
@@ -63,5 +97,12 @@
             </ul>
         </nav>
     </header>
+    <script>
+        const menuToggle = document.querySelector(".menu-toggle");
+        const navMenu = document.querySelector("nav ul");
+        menuToggle.addEventListener("click", () => {
+            navMenu.classList.toggle("active");
+        });
+    </script>
 </body>
 </html>
