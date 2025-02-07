@@ -178,6 +178,71 @@
             .section-content {
                 width: 100%;
             }
+            .services {
+    text-align: center;
+    padding: 80px 20px;
+}
+.services h1 {
+    font-size: 48px;
+    margin-bottom: 30px;
+    color: white;
+}
+.service-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+.service-box {
+    width: 300px;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid;
+    border-image: linear-gradient(45deg, rgba(0, 0, 0, 0.7), rgba(255, 255, 255, 0.3)) 1;
+    text-align: center;
+    transition: transform 0.3s;
+}
+.service-box:hover {
+    transform: translateY(-5px);
+}
+.service-box img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+}
+.service-box h2 {
+    font-size: 24px;
+    color: white;
+    margin-bottom: 10px;
+}
+.service-box p {
+    font-size: 16px;
+    color: white;
+    margin-bottom: 20px;
+}
+.purchase-button {
+    background-color: #AD77D7;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+    display: inline-block;
+}
+.purchase-button:hover {
+    background-color: #FDF7AD;
+    color: #222;
+}   
+            .category-title {
+    font-size: 32px;
+    color: white;
+    margin-top: 50px;
+    text-align: center;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+    display: inline-block;
+    padding-bottom: 5px;
+}
         }
     </style>
 </head>
@@ -231,13 +296,105 @@
             <p>Our Development Team is highly trained in discord.js and discord.py, and have hosting servers with gigabytes of RAM and Storage, multiple CPU Cores, high network speeds and unlimited bandwidth, active 24/7 with DDoS protection.</p>
         </div>
     </section>
-    <section class="section">
-        <img src="https://letstalkscience.ca/sites/default/files/2023-11/2023_Stock_solar-eclipse-header_Bil_ResourceBody.jpg" alt="name">
-        <div class="section-content">
-            <h2>And more!</h2>
-            <p>Have questions? Feel free to reach out and contact us! :)</p>
+    <section id="services" class="services">
+    <h1>Our Services</h1>
+    <h2 class="category-title">AI & Data Services</h2>
+    <div class="service-container">
+        <div class="service-box">
+            <img src="" alt="AI Technology">
+            <h2>AI Technology</h2>
+            <p>Get full access to our AI APIs, and AI codes, perfectly tuned for your needs.</p>
+            <a href="#" class="purchase-button">Purchase for $25</a>
         </div>
-    </section>
+        <div class="service-box">
+            <img src="" alt="DB/API Management">
+            <h2>DB/API Management</h2>
+            <p>Let us handle API and database management so you don't have to.</p>
+            <a href="#" class="purchase-button">Purchase for $2 per DB/Key</a>
+        </div>
+    </div>
+    <h2 class="category-title">Website Development</h2>
+    <div class="service-container">
+        <div class="service-box">
+            <img src=" alt="Web 1">
+            <h2>Package 1</h2>
+            <p>Code using HTML, CSS, and JS.</p>
+            <a href="#" class="purchase-button">Purchase for $10</a>
+        </div>
+        <div class="service-box">
+            <img src=" alt="Web 2">
+            <h2>Package 2</h2>
+            <p>Code using HTML, CSS, JS, and Express.</p>
+            <a href="#" class="purchase-button">Purchase for $16</a>
+        </div>
+        <div class="service-box">
+            <img src=" alt="Web 3">
+            <h2>Package 3</h2>
+            <p>Code using HTML, CSS, and JS, hosted with a custom subdomain.</p>
+            <a href="#" class="purchase-button">Purchase for $12</a>
+        </div>
+        <div class="service-box">
+            <img src=" alt="Web 4">
+            <h2>Package 4</h2>
+            <p>Code using HTML, CSS, JS, and Express, hosted with a custom subdomain.</p>
+            <a href="#" class="purchase-button">Purchase for $22</a>
+        </div>
+    </div>
+    <h2 class="categogory-title">Discord.js/Discord.py Packages</h2>
+    <div class="service-container">
+        <div class="service-box">
+            <img src="" alt="Bot 1">
+            <h2>Beginner Bot Package</h2>
+            <p>Contains:<br>-Basic full js/py bot code from a member of our Development Team</p>
+            <a href="#" class="purchase-button">Purchase for $8</a>
+        </div>
+        <div class="service-box">
+            <img src="" alt="Bot 2">
+            <h2>Beginner Plus Bot Package</h2>
+            <p>Contains:<br>-Advanced full js/py bot code from a member of our Senior Development Team</p>
+            <a href="#" class="purchase-button">Purchase for $15</a>
+        </div>
+        <div class="service-box">
+            <img src="" alt="Bot 3">
+            <h2>Starter Bot Package</h2>
+            <p>Contains:<br>-Basic full js/py bot code from a member of our Development Team<br>-24/7 hosting with DDoS protection<br>-1 GB RAM<br>-1 CPU Core<br>-5 GB Storage<br>-10 gbps connection speeds</p>
+            <a href="#" class="purchase-button">Purchase for $4/month</a>
+        </div>
+        <div class="service-box">
+            <img src="" alt="Bot 4">
+            <h2>Advanced Bot Package</h2>
+            <p>Contains:<br>-Advanced full js/py bot code from a member of our Development Team or Senior Development Team<br>-24/7 hosting with DDoS protection<br>-2 GB RAM<br>-1 CPU Core<br>-5 GB Storage<br>-10 gbps connection speeds</p>
+            <a href="#" class="purchase-button">Purchase for $6/month</a>
+        </div>
+        <div class="service-box">
+            <img src="" alt="Bot 5">
+            <h2>Pro Bot Package</h2>
+            <p>Contains:<br>-Advanced full js/py bot code from a member of our Senior Development Team<br>-24/7 hosting with DDoS protection<br>-4 GB RAM<br>-1 CPU Cores<br>-10 GB Storage<br>-10 gbps connection speeds</p>
+            <a href="#" class="purchase-button">Purchase for $7/month</a>
+        </div>
+        <h2 class="category-title">BDFD</h2>
+        <div class="service-box">
+            <img src="" alt="BDFD 1">
+            <h2>BDFD Code Package</h2>
+            <p>Contains:<br>-Full code (via BDFD bot share code link)<br><br>Only one free per Discord account!</p>
+            <a href="#" class="purchase-button">Purchase</a>
+        </div>
+        <div class="service-box">
+            <img src="" alt="BDFD 2">
+            <h2>BDFD Host Package</h2>
+            <p>Contains:<br>-Full code + lifetime hosting<br><br>Only one free per Discord account!</p>
+            <a href="#" class="purchase-button">Purchase for $5</a>
+        </div>
+        <div class="service-box">
+            <img src="" alt="BDFD 3">
+            <h2>BDFD Code Package</h2>
+            <p>Contains:<br>-Full code with access to premium features<br>-One month of premium hosting</p>
+            <a href="#" class="purchase-button">Purchase for $8/month</a>
+        </div>
+    </div>
+</section>
+    </div>
+</section>
     </div>
     <script>
         const menuToggle = document.querySelector(".menu-toggle");
