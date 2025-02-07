@@ -9,6 +9,8 @@
             margin: 0;
             font-family: Arial, sans-serif;
             background-color: #111;
+            color: white;
+            text-align: center;
         }
         header {
             display: flex;
@@ -54,10 +56,45 @@
             border: none;
             cursor: pointer;
         }
+        .home {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to right, #AD77D7, #FDF7AD);
+            color: #222;
+            text-align: center;
+            padding: 20px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        .home h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+        .home p {
+            font-size: 20px;
+            max-width: 600px;
+            margin-bottom: 20px;
+        }
+        .cta-button {
+            background-color: #222;
+            color: #FDF7AD;
+            padding: 12px 24px;
+            font-size: 18px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .cta-button:hover {
+            background-color: #AD77D7;
+            color: white;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
         @media (max-width: 800px) {
-            header {
-                padding: 15px;
-            }
             .menu-toggle {
                 display: block;
             }
@@ -78,6 +115,12 @@
             nav ul li {
                 margin: 10px 0;
             }
+            .home h1 {
+                font-size: 36px;
+            }
+            .home p {
+                font-size: 18px;
+            }
         }
     </style>
 </head>
@@ -97,6 +140,11 @@
             </ul>
         </nav>
     </header>
+    <section class="home">
+        <h1>Welcome to Eclipse Enterprises!</h1>
+        <p>Want to host a Discord Bot or Website but don't know where to begin? Our Development Team offers affordable packages for BDFD bot code + hosting, discord.js and discord.py coding and hosting, website coding and hosting with custom subdomains, DB/API keys, AI technology,  and more!</p>
+        <a href="#" class="cta-button">Learn More</a>
+    </section>
     <script>
         const menuToggle = document.querySelector(".menu-toggle");
         const navMenu = document.querySelector("nav ul");
