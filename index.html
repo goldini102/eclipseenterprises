@@ -98,15 +98,21 @@
             background-color: #AD77D7;
             color: white;
         }
-        .section {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 50px 10%;
-            opacity: 0;
-            transform: translateY(50px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
+        .content-container {
+    background: linear-gradient(-45deg, #AD77D7, #FDF7AD, #AD77D7);
+    background-size: 400% 400%;
+    animation: gradientMove 10s infinite alternate;
+    padding: 50px 0;
+}
+
+.section {
+    background: rgba(34, 34, 34, 0.8);
+    border-radius: 10px;
+    padding: 40px;
+    margin: 20px auto;
+    width: 80%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
         .section img {
             width: 40%;
             border-radius: 10px;
