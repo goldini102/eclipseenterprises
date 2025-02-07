@@ -18,7 +18,10 @@
             align-items: center;
             padding: 15px 30px;
             background-color: #222;
-            position: relative;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
         }
         .logo {
             font-size: 24px;
@@ -62,11 +65,16 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(to right, #AD77D7, #FDF7AD);
-            color: #222;
             text-align: center;
+            color: #222;
+            background: linear-gradient(-45deg, #AD77D7, #FDF7AD, #AD77D7);
+            background-size: 400% 400%;
+            animation: gradientMove 10s infinite alternate;
             padding: 20px;
-            animation: fadeIn 1.5s ease-in-out;
+        }
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
         }
         .home h1 {
             font-size: 48px;
@@ -90,9 +98,33 @@
             background-color: #AD77D7;
             color: white;
         }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
+        .section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 50px 10%;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .section img {
+            width: 40%;
+            border-radius: 10px;
+        }
+        .section-content {
+            width: 55%;
+            text-align: left;
+        }
+        .section-content h2 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        .section-content p {
+            font-size: 18px;
+        }
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
         @media (max-width: 800px) {
             .menu-toggle {
@@ -121,6 +153,17 @@
             .home p {
                 font-size: 18px;
             }
+            .section {
+                flex-direction: column;
+                text-align: center;
+            }
+            .section img {
+                width: 80%;
+                margin-bottom: 20px;
+            }
+            .section-content {
+                width: 100%;
+            }
         }
     </style>
 </head>
@@ -142,15 +185,61 @@
     </header>
     <section class="home">
         <h1>Welcome to Eclipse Enterprises!</h1>
-        <p>Want to host a Discord Bot or Website but don't know where to begin? Our Development Team offers affordable packages for BDFD bot code + hosting, discord.js and discord.py coding and hosting, website coding and hosting with custom subdomains, DB/API keys, AI technology,  and more!</p>
+        <p>Making your coding dreams come alive.</p>
         <a href="#" class="cta-button">Learn More</a>
     </section>
+    <section class="section">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHVsO5kFrri_uqZdlB6mACC2bdyyy6D0bYag&s" alt="name">
+        <div class="section-content">
+            <h2>AI Technology</h2>
+            <p>Our dedicated team has spent countless hours finetuning AI models, codes, and API keys that are perfect for everyone.</p>
+        </div>
+    </section>
+    <section class="section">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrjABweqT7gL00cuGom4aYvIzD9KINiaj-iA&s" alt="name">
+        <div class="section-content">
+            <h2>DB/API Management</h2>
+            <p>Don't want to go through the hassle of dealing with APIs and DBs? Our management team will tackle the hassle for you!</p>
+        </div>
+    </section>
+    <section class="section">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFBDpP5C5t_t8FjbMu-rjqndyjCmaoKMNTjA&s" alt="name">
+        <div class="section-content">
+            <h2>Websites</h2>
+            <p>Ever wanted to have your own website, but don't know how to start? Our team is qualified in HTML, CSS, JavaScript, and Express. Or maybe you have the code, but don't know how to deploy it? Don't worry, we can do that too!</p>
+        </div>
+    </section>
+    <section class="section">
+        <img src="https://m.media-amazon.com/images/I/51lpm9SpsJL.png" alt="name">
+        <div class="section-content">
+            <h2>Discord Bots</h2>
+            <p>Our Development Team is highly trained in discord.js and discord.py, and have hosting servers with gigabytes of RAM and Storage, multiple CPU Cores, high network speeds and unlimited bandwidth, active 24/7 with DDoS protection.</p>
+        </div>
+    </section>
+    <section class="section">
+        <img src="https://letstalkscience.ca/sites/default/files/2023-11/2023_Stock_solar-eclipse-header_Bil_ResourceBody.jpg" alt="name">
+        <div class="section-content">
+            <h2>And more!</h2>
+            <p>Have questions? Feel free to reach out and contact us! :)</p>
+        </div>
     <script>
         const menuToggle = document.querySelector(".menu-toggle");
         const navMenu = document.querySelector("nav ul");
         menuToggle.addEventListener("click", () => {
             navMenu.classList.toggle("active");
         });
+        const sections = document.querySelectorAll(".section");
+        function revealSections() {
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                if (sectionTop < windowHeight - 100) {
+                    section.classList.add("visible");
+                }
+            });
+        }
+        window.addEventListener("scroll", revealSections);
+        revealSections();
     </script>
 </body>
 </html>
